@@ -69,13 +69,13 @@
         const dbref = ref(db);
         
 
-        let user = document.getElementById("user");
-        let pass = document.getElementById("pass");
+        let email = document.getElementById("user");
+        let password = document.getElementById("pass");
         let submit = document.getElementById("button")
 
         let SignInUser = evt => {
             evt.preventDefault();
-            signInWithEmailAndPassword(auth, EmailInp.value, PassInp.value)
+            signInWithEmailAndPassword(auth, email, password)
             .then((credentials)=>{
                 console.log("sign in");
                 get(child(dbref, 'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
