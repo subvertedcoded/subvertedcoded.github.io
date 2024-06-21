@@ -45,7 +45,7 @@
         import { getDatabase, ref, child, get, set, update, remove} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
         import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
       
@@ -64,7 +64,6 @@
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
         const db = getDatabase(); 
         const auth = getAuth(app);
         const dbref = ref(db);
@@ -82,8 +81,17 @@
             signInWithEmailAndPassword(auth, email, password)
             .then((credentials)=>{
                 console.log("sign in");
-                const user = userCredential.user;
-                alert("Loggin in...")
+                const user = credentials.user;
+                get(child(dbref, 'UsersAuthList/' + credentials.user.uid)).then((snapshot)=>{
+                    const userInfo = {
+                        firstname: snapshot.val() ? snapshot.val().firstname : '',
+                        lastname: snapshot.val() ? snapshot.val().lastname : ''
+                    };
+                    sessionStorage.setItem("user-info", JSON.stringify(userInfo));
+                    sessionStorage.setItem("user-creds", JSON.stringify(credentials.user));
+                })
+                
+                alert("Auth Successful... Logging in...");
                 window.location.href = "main.html"
             })
             .catch((error=>{

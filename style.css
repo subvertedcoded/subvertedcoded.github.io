@@ -1,0 +1,60 @@
+.signout-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: 
+  #f4f1ee; /* A parchment-like background */
+    color: 
+  #333; /* Dark text for readability */
+    padding: 10px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  h1 {
+    color: 
+  #3a5e48; /* Dark green for a touch of the forest */
+  }
+  
+  p {
+    line-height: 1.6;
+  }
+  
+  #console-output {
+    background-color: 
+  #0a3a0a; /* Dark forest green background */
+    color: 
+  #c9f2c7; /* Soft magical green for text */
+    font-family: 'Courier New', monospace; /* Monospace to mimic console output */
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px 
+  rgba(0, 0, 0, 0.3); /* Soft shadow for depth */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    word-wrap: break-word; /* Ensure long words are broken and wrap to the next line */
+    white-space: pre-wrap; /* Allows text to wrap and preserves whitespace and line breaks */
+  }
+  
+  .code-snippet {
+    background-color: 
+  #f4f4f4; /* Light grey background */
+    color: 
+  #333; /* Dark text for contrast */
+    font-family: 'Courier New', monospace; /* Monospace font for code-like appearance */
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid 
+  #ddd; /* Subtle border */
+    display: block; /* Ensure it's displayed as a block-level element */
+    white-space: pre-wrap; /* Maintain whitespace, but allow wrapping */
+    word-wrap: break-word; /* Ensure long lines can wrap */
+  }
