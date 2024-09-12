@@ -4,6 +4,14 @@
     right: 10px;
 }
 
+.items{
+  border-radius: 10px; 
+  background-color: lightblue; 
+  padding: 10px; 
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+
 
   .btnStart{
     display: block;
@@ -28,9 +36,9 @@ body {
   #f4f1ee; /* A parchment-like background */
     color: 
   #333; /* Dark text for readability */
-    padding: 10px;
-    max-width: 1000px;
-    margin: auto;
+    /* padding: 10px;
+    max-width: auto;
+    margin: auto; */
   }
   
   h1 {
