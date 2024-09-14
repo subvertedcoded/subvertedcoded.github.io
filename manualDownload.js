@@ -5,9 +5,7 @@ const container = document.getElementById('container');
 btnStart.addEventListener('click', () => {
     container.innerHTML = '';  
     console.log('Attempting to download and display data');
-    fetch('https://dynmapclaimcompare.onrender.com/download', {
-        mode: 'cors'
-    })
+    fetch('https://dynmapclaimcompare.onrender.com/download')
     .then(response => response.text())
     .then(data => {
 
